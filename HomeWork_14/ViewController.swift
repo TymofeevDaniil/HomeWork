@@ -1,0 +1,17 @@
+//
+//  ViewController.swift
+//  HomeWork_14
+//
+//  Created by Danil Tymofeev on 25.05.2021.
+//
+import UIKit
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+
+}
+
