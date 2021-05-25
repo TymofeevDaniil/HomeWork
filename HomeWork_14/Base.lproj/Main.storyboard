@@ -64,14 +64,84 @@
                     <view key="view" contentMode="scaleToFill" id="20I-AG-HKl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To-Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t2-Zu-iOn">
+                                <rect key="frame" x="20" y="94" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-5N-tKL">
+                                <rect key="frame" x="20" y="150" width="374" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="6Cg-HS-erE" customClass="Cell" customModule="HomeWork_14" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Cg-HS-erE" id="9Ta-HA-jBl" customClass="Cell" customModule="HomeWork_14" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cl-d2-5gg">
+                                                    <rect key="frame" x="30" y="11" width="314" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Cl-d2-5gg" firstAttribute="leading" secondItem="9Ta-HA-jBl" secondAttribute="leadingMargin" constant="10" id="0VL-fy-p0r"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5Cl-d2-5gg" secondAttribute="bottom" constant="0.5" id="T4R-fy-sRe"/>
+                                                <constraint firstItem="5Cl-d2-5gg" firstAttribute="top" secondItem="9Ta-HA-jBl" secondAttribute="topMargin" id="irh-Dy-gvv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Cl-d2-5gg" secondAttribute="trailing" constant="10" id="ox4-66-MyB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskText" destination="5Cl-d2-5gg" id="zFX-3d-td1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xCL-Cs-p9x" id="Z0J-gU-YvJ"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdP-VM-qoe">
+                                <rect key="frame" x="354" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ov2-OL-SdR"/>
+                                    <constraint firstAttribute="width" constant="40" id="rSB-lX-qpi"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButton:" destination="xCL-Cs-p9x" eventType="touchUpInside" id="Vbg-dC-MH2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KHE-H7-fil"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KHE-H7-fil" firstAttribute="trailing" secondItem="WdP-VM-qoe" secondAttribute="trailing" constant="20" id="0rj-Ky-nrk"/>
+                            <constraint firstItem="KHE-H7-fil" firstAttribute="trailing" secondItem="zmj-5N-tKL" secondAttribute="trailing" constant="20" id="3bs-cn-OcY"/>
+                            <constraint firstItem="0t2-Zu-iOn" firstAttribute="top" secondItem="KHE-H7-fil" secondAttribute="top" constant="50" id="Kmg-kS-FSl"/>
+                            <constraint firstItem="KHE-H7-fil" firstAttribute="trailing" secondItem="0t2-Zu-iOn" secondAttribute="trailing" constant="20" id="Sgu-pX-4uE"/>
+                            <constraint firstItem="WdP-VM-qoe" firstAttribute="top" secondItem="KHE-H7-fil" secondAttribute="top" id="X7a-KX-dhN"/>
+                            <constraint firstItem="zmj-5N-tKL" firstAttribute="top" secondItem="0t2-Zu-iOn" secondAttribute="bottom" constant="20" id="ecD-XU-WIK"/>
+                            <constraint firstItem="0t2-Zu-iOn" firstAttribute="leading" secondItem="KHE-H7-fil" secondAttribute="leading" constant="20" id="oCd-tu-dCy"/>
+                            <constraint firstItem="zmj-5N-tKL" firstAttribute="leading" secondItem="KHE-H7-fil" secondAttribute="leading" constant="20" id="pDU-3W-NYk"/>
+                            <constraint firstItem="KHE-H7-fil" firstAttribute="bottom" secondItem="zmj-5N-tKL" secondAttribute="bottom" id="ttA-pw-Uzl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Task 2" id="ZNt-CR-xb9"/>
+                    <connections>
+                        <outlet property="listTable" destination="zmj-5N-tKL" id="SN7-IF-li4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcA-bg-zGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="72"/>
+            <point key="canvasLocation" x="1857.9710144927537" y="71.651785714285708"/>
         </scene>
         <!--ThirdTask-->
         <scene sceneID="81x-ZD-dXT">
@@ -111,8 +181,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
