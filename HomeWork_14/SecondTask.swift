@@ -28,6 +28,11 @@ class SecondTask: UIViewController {
     }
 }
 //MARK: - Setting Table View
+extension SecondTask: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
 extension SecondTask: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
