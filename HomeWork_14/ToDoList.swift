@@ -2,36 +2,45 @@
 import Foundation
 import RealmSwift
 
-class ToDoList: Object{
+class Task: Object{
     @objc dynamic var item = String()
+}
+class TaskList: Object{
+    let list = List<Task>()
 }
 class Persistance{
     static let shared = Persistance()
     private let realm = try! Realm()
     
     func load() -> [String]{
+        print("loaded")
+        print(realm.objects(TaskList.self))
         var list = [String]()
-        let allTasks = realm.objects(ToDoList.self)
-        for task in allTasks{
+        let savedList = TaskList()
+        print(savedList.list)
+        for task in savedList.list{
+            print(task)
             list.append(task.item)
         }
+        print(list)
         return list
     }
     func save(list: [String]){
-        print(list)
-        let savedTask = ToDoList()
-        print(savedTask)
-        let oldItems = realm.objects(ToDoList.self)
+        let oldList = realm.objects(TaskList.self)
         try! realm.write{
-            realm.delete(oldItems)
+            realm.delete(oldList)
         }
-        for task in list{
-            try! realm.write{
-            savedTask.item = task
-            realm.add(savedTask)
+        let newList = TaskList()
+        try! realm.write{
+            for task in list{
+                let newTask = Task()
+                newTask.item = task
+                realm.add(newTask)
+                newList.list.append(newTask)
+                realm.add(newList)
             }
         }
-        print(realm.objects(ToDoList.self).count)
+        print(realm.objects(TaskList.self))
     }
     
 }
