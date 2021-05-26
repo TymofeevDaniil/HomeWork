@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 class SecondTask: UIViewController {
     
@@ -16,6 +17,7 @@ class SecondTask: UIViewController {
         super.viewDidLoad()
         taskList = Persistance.shared.load()
         listTable.reloadData()
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         Persistance.shared.save(list: taskList)

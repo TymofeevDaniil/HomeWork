@@ -16,7 +16,7 @@ class Persistance{
         print("loaded")
         print(realm.objects(TaskList.self))
         var list = [String]()
-        let savedList = realm.objects(TaskList.self).first!
+        guard let savedList = realm.objects(TaskList.self).first else {return []}
         for task in savedList.list{
             list.append(task.item)
         }
