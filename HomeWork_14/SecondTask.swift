@@ -10,21 +10,15 @@ class SecondTask: UIViewController {
         window.delegate = self
         self.view.addSubview(window)
     }
-    var taskList: [String] = ["Люби", "Корми", "Никогда не бросай"]
-    var newTask = [String]()
-    var savedTask = [String]()
+    var taskList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         taskList = Persistance.shared.load()
         listTable.reloadData()
-        print(savedTask)
     }
     override func viewDidDisappear(_ animated: Bool) {
-        savedTask = [String]()
-        savedTask += taskList + newTask
-        Persistance.shared.save(list: savedTask)
-        print(savedTask)
+        Persistance.shared.save(list: taskList)
     }
 }
 //MARK: - Setting Table View
@@ -58,11 +52,9 @@ extension SecondTask: UITableViewDataSource{
 extension SecondTask: NewTask{
     func add(window: AddTaskWindow) {
         guard let text = window.taskTextField.text else {return}
-        newTask.append(text)
+        taskList.append(text)
+        listTable.reloadData()
         window.removeFromSuperview()
-        let newIndexPath = IndexPath(row: taskList.count, section: 0)
-        taskList += newTask
-        listTable.insertRows(at: [newIndexPath], with: .fade)
         self.view.layoutSubviews()
     }
 }
