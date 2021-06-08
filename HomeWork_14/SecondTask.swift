@@ -20,12 +20,15 @@ class SecondTask: UIViewController {
         listTable.reloadData()
     }
     override func viewDidDisappear(_ animated: Bool) {
+        updateSwitch()
+        Persistance.shared.save(list: taskList, done: doneList)
+    }
+    func updateSwitch(){
         let cells = listTable.visibleCells as! [Cell]
         doneList = []
         for done in cells{
             doneList.append(done.taskSwitch.isOn)
         }
-        Persistance.shared.save(list: taskList, done: doneList)
     }
 }
 //MARK: - Setting Table View
@@ -62,6 +65,7 @@ extension SecondTask: NewTask{
     func add(window: AddTaskWindow) {
         guard let text = window.taskTextField.text else {return}
         taskList.append(text)
+        updateSwitch()
         doneList.append(false)
         listTable.reloadData()
         window.removeFromSuperview()
