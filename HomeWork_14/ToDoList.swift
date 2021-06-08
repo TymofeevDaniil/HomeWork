@@ -4,6 +4,7 @@ import RealmSwift
 
 class Task: Object{
     @objc dynamic var item = String()
+    @objc dynamic var done = Bool()
 }
 class TaskList: Object{
     let list = List<Task>()
@@ -12,18 +13,20 @@ class Persistance{
     static let shared = Persistance()
     private let realm = try! Realm()
     
-    func load() -> [String]{
+    func load() -> ([String], [Bool]){
         print("loaded")
         print(realm.objects(TaskList.self))
         var list = [String]()
-        guard let savedList = realm.objects(TaskList.self).first else {return []}
+        var done = [Bool]()
+        guard let savedList = realm.objects(TaskList.self).first else {return ([], [])}
         for task in savedList.list{
             list.append(task.item)
+            done.append(task.done)
         }
         print(list)
-        return list
+        return (list, done)
     }
-    func save(list: [String]){
+    func save(list: [String], done: [Bool]){
         let oldList = realm.objects(TaskList.self)
         try! realm.write{
             realm.delete(oldList)
@@ -33,6 +36,13 @@ class Persistance{
             for task in list{
                 let newTask = Task()
                 newTask.item = task
+                realm.add(newTask)
+                newList.list.append(newTask)
+                realm.add(newList)
+            }
+            for status in done{
+                let newTask = Task()
+                newTask.done = status
                 realm.add(newTask)
                 newList.list.append(newTask)
                 realm.add(newList)

@@ -75,29 +75,33 @@
                                 <rect key="frame" x="20" y="150" width="374" height="663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="42" id="6Cg-HS-erE" customClass="Cell" customModule="HomeWork_14" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="42"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="PnR-oW-ufa" customClass="Cell" customModule="HomeWork_14" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Cg-HS-erE" id="9Ta-HA-jBl" customClass="Cell" customModule="HomeWork_14" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PnR-oW-ufa" id="hly-n3-mVK">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cl-d2-5gg">
-                                                    <rect key="frame" x="30" y="9" width="314" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8y-mQ-joV">
+                                                    <rect key="frame" x="30" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-A3-353">
+                                                    <rect key="frame" x="315" y="6.5" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5Cl-d2-5gg" firstAttribute="leading" secondItem="9Ta-HA-jBl" secondAttribute="leadingMargin" constant="10" id="0VL-fy-p0r"/>
-                                                <constraint firstItem="5Cl-d2-5gg" firstAttribute="centerY" secondItem="9Ta-HA-jBl" secondAttribute="centerY" id="BeQ-5D-ne3"/>
-                                                <constraint firstItem="5Cl-d2-5gg" firstAttribute="centerX" secondItem="9Ta-HA-jBl" secondAttribute="centerX" id="ZeT-VJ-tdI"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5Cl-d2-5gg" secondAttribute="trailing" constant="10" id="ox4-66-MyB"/>
+                                                <constraint firstItem="lwK-A3-353" firstAttribute="centerY" secondItem="hly-n3-mVK" secondAttribute="centerY" id="YFn-Db-UAd"/>
+                                                <constraint firstItem="q8y-mQ-joV" firstAttribute="leading" secondItem="hly-n3-mVK" secondAttribute="leadingMargin" constant="10" id="cz7-dQ-adB"/>
+                                                <constraint firstItem="q8y-mQ-joV" firstAttribute="centerY" secondItem="hly-n3-mVK" secondAttribute="centerY" id="eBb-hc-8By"/>
+                                                <constraint firstAttribute="trailing" secondItem="lwK-A3-353" secondAttribute="trailing" constant="10" id="lAi-2d-1cq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="taskText" destination="5Cl-d2-5gg" id="zFX-3d-td1"/>
+                                            <outlet property="taskSwitch" destination="lwK-A3-353" id="pzt-Ax-4xj"/>
+                                            <outlet property="taskText" destination="q8y-mQ-joV" id="hJk-k7-JqJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

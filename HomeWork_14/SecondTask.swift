@@ -12,15 +12,15 @@ class SecondTask: UIViewController {
         self.view.addSubview(window)
     }
     var taskList = [String]()
+    var doneList = [Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskList = Persistance.shared.load()
+        (taskList, doneList) = Persistance.shared.load()
         listTable.reloadData()
-        
     }
     override func viewDidDisappear(_ animated: Bool) {
-        Persistance.shared.save(list: taskList)
+        Persistance.shared.save(list: taskList, done: doneList)
     }
 }
 //MARK: - Setting Table View
@@ -36,6 +36,7 @@ extension SecondTask: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! Cell
         cell.taskText.text = taskList[indexPath.row]
+        cell.taskSwitch.isOn = doneList[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView,
@@ -44,6 +45,7 @@ extension SecondTask: UITableViewDataSource{
         if editingStyle == .delete{
             tableView.beginUpdates()
             taskList.remove(at: indexPath.row)
+            doneList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }
@@ -55,6 +57,7 @@ extension SecondTask: NewTask{
     func add(window: AddTaskWindow) {
         guard let text = window.taskTextField.text else {return}
         taskList.append(text)
+        doneList.append(false)
         listTable.reloadData()
         window.removeFromSuperview()
         self.view.layoutSubviews()
