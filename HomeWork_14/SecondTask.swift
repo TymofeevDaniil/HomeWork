@@ -20,6 +20,11 @@ class SecondTask: UIViewController {
         listTable.reloadData()
     }
     override func viewDidDisappear(_ animated: Bool) {
+        let cells = listTable.visibleCells as! [Cell]
+        doneList = []
+        for done in cells{
+            doneList.append(done.taskSwitch.isOn)
+        }
         Persistance.shared.save(list: taskList, done: doneList)
     }
 }

@@ -27,28 +27,24 @@ class Persistance{
         return (list, done)
     }
     func save(list: [String], done: [Bool]){
+        print("saving")
         let oldList = realm.objects(TaskList.self)
         try! realm.write{
             realm.delete(oldList)
         }
         let newList = TaskList()
         try! realm.write{
-            for task in list{
+            for index in 0..<list.count{
                 let newTask = Task()
-                newTask.item = task
-                realm.add(newTask)
-                newList.list.append(newTask)
-                realm.add(newList)
-            }
-            for status in done{
-                let newTask = Task()
-                newTask.done = status
+                newTask.item = list[index]
+                newTask.done = done[index]
                 realm.add(newTask)
                 newList.list.append(newTask)
                 realm.add(newList)
             }
         }
         print(realm.objects(TaskList.self))
+        print("saved")
     }
     
 }
