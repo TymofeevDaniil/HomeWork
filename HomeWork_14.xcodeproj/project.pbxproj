@@ -21,6 +21,8 @@
 		2E449F9C265D7D07006B3430 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449F9B265D7D07006B3430 /* ToDoList.swift */; };
 		2E449F9E265D9140006B3430 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449F9D265D9140006B3430 /* Cell.swift */; };
 		2E449FA926711190006B3430 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FA826711190006B3430 /* Task.swift */; };
+		2E449FAC267124BB006B3430 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FAA267124BB006B3430 /* Model.xcdatamodeld */; };
+		2E449FAE2671435B006B3430 /* CellCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FAD2671435B006B3430 /* CellCore.swift */; };
 		8247329A8A3F62B6174452AA /* Pods_HomeWork_14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6679EAC392D1DDA12D5D1B17 /* Pods_HomeWork_14.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		2E449F9B265D7D07006B3430 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		2E449F9D265D9140006B3430 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		2E449FA826711190006B3430 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2E449FAB267124BB006B3430 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2E449FAD2671435B006B3430 /* CellCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCore.swift; sourceTree = "<group>"; };
 		462A0C76C01F90CCCD9489CB /* Pods-HomeWork_14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork_14.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork_14/Pods-HomeWork_14.debug.xcconfig"; sourceTree = "<group>"; };
 		6679EAC392D1DDA12D5D1B17 /* Pods_HomeWork_14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork_14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAC7EEF40CAE53DC906C84C /* Pods-HomeWork_14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork_14.release.xcconfig"; path = "Target Support Files/Pods-HomeWork_14/Pods-HomeWork_14.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				2E449F93265D5DE0006B3430 /* ThirdTask.swift */,
+				2E449FAA267124BB006B3430 /* Model.xcdatamodeld */,
+				2E449FAD2671435B006B3430 /* CellCore.swift */,
 			);
 			path = "The Third Task";
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 				2E449F9E265D9140006B3430 /* Cell.swift in Sources */,
 				2E449F7E265D3480006B3430 /* AppDelegate.swift in Sources */,
 				2E449F92265D5DAF006B3430 /* SecondTask.swift in Sources */,
+				2E449FAC267124BB006B3430 /* Model.xcdatamodeld in Sources */,
+				2E449FAE2671435B006B3430 /* CellCore.swift in Sources */,
 				2E449F80265D3480006B3430 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +499,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E449FAA267124BB006B3430 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E449FAB267124BB006B3430 /* Model.xcdatamodel */,
+			);
+			currentVersion = 2E449FAB267124BB006B3430 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E449F72265D3480006B3430 /* Project object */;
 }
