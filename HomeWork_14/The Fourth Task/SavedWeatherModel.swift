@@ -21,7 +21,7 @@ class SavedWeatherModel: Object{
     @objc dynamic var tempDay4 = Int()
     @objc dynamic var tempDay5 = Int()
     
-    func data() -> (String, String, String, Int, Int, String, String, String, String, String, Int, Int, Int, Int, Int){
-        return (name, descriptionW, icon, tempMin, tempMax, day1, day2, day3, day4, day5, tempDay1, tempDay2, tempDay3, tempDay4, tempDay5)
-    }
+//    func data() -> (String, String, String, Int, Int, String, String, String, String, String, Int, Int, Int, Int, Int){
+//        return (name, descriptionW, icon, tempMin, tempMax, day1, day2, day3, day4, day5, tempDay1, tempDay2, tempDay3, tempDay4, tempDay5)
+//    }
 }

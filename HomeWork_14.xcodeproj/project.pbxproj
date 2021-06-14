@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E3B73262677AC7D00B4D2C9 /* FourthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3B73252677AC7D00B4D2C9 /* FourthTask.swift */; };
 		2E449F7E265D3480006B3430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449F7D265D3480006B3430 /* AppDelegate.swift */; };
 		2E449F80265D3480006B3430 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449F7F265D3480006B3430 /* SceneDelegate.swift */; };
 		2E449F82265D3480006B3430 /* FirstTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449F81265D3480006B3430 /* FirstTask.swift */; };
@@ -23,7 +24,6 @@
 		2E449FA926711190006B3430 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FA826711190006B3430 /* Task.swift */; };
 		2E449FAC267124BB006B3430 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FAA267124BB006B3430 /* Model.xcdatamodeld */; };
 		2E449FAE2671435B006B3430 /* CellCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FAD2671435B006B3430 /* CellCore.swift */; };
-		2E449FB4267270D6006B3430 /* FourthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FB3267270D6006B3430 /* FourthTask.swift */; };
 		2E449FB9267271FD006B3430 /* fiveDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FB8267271FD006B3430 /* fiveDayCell.swift */; };
 		2E449FBB2672730C006B3430 /* WeatherDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FBA2672730C006B3430 /* WeatherDataLoader.swift */; };
 		2E449FBD26727331006B3430 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E449FBC26727331006B3430 /* WeatherData.swift */; };
@@ -33,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E3B73252677AC7D00B4D2C9 /* FourthTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthTask.swift; sourceTree = "<group>"; };
 		2E449F7A265D3480006B3430 /* HomeWork_14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork_14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E449F7D265D3480006B3430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E449F7F265D3480006B3430 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +52,9 @@
 		2E449FA826711190006B3430 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2E449FAB267124BB006B3430 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2E449FAD2671435B006B3430 /* CellCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCore.swift; sourceTree = "<group>"; };
-		2E449FB3267270D6006B3430 /* FourthTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourthTask.swift; path = ../../../../HomeWork_12.6/HomeWork_12.6/FourthTask.swift; sourceTree = "<group>"; };
-		2E449FB8267271FD006B3430 /* fiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = fiveDayCell.swift; path = ../../../../HomeWork_12.6/HomeWork_12.6/fiveDayCell.swift; sourceTree = "<group>"; };
-		2E449FBA2672730C006B3430 /* WeatherDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherDataLoader.swift; path = ../../../../HomeWork_12.6/HomeWork_12.6/WeatherDataLoader.swift; sourceTree = "<group>"; };
-		2E449FBC26727331006B3430 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherData.swift; path = ../../../../HomeWork_12.6/HomeWork_12.6/WeatherData.swift; sourceTree = "<group>"; };
+		2E449FB8267271FD006B3430 /* fiveDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fiveDayCell.swift; sourceTree = "<group>"; };
+		2E449FBA2672730C006B3430 /* WeatherDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataLoader.swift; sourceTree = "<group>"; };
+		2E449FBC26727331006B3430 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		2E449FC0267277FA006B3430 /* SavedWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWeatherModel.swift; sourceTree = "<group>"; };
 		2E449FC22672780E006B3430 /* SavedWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWeather.swift; sourceTree = "<group>"; };
 		462A0C76C01F90CCCD9489CB /* Pods-HomeWork_14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork_14.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork_14/Pods-HomeWork_14.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				2E449FB22672706A006B3430 /* Weather Data */,
+				2E3B73252677AC7D00B4D2C9 /* FourthTask.swift */,
 				2E449FC0267277FA006B3430 /* SavedWeatherModel.swift */,
 				2E449FC22672780E006B3430 /* SavedWeather.swift */,
 			);
@@ -178,7 +179,6 @@
 		2E449FB22672706A006B3430 /* Weather Data */ = {
 			isa = PBXGroup;
 			children = (
-				2E449FB3267270D6006B3430 /* FourthTask.swift */,
 				2E449FBC26727331006B3430 /* WeatherData.swift */,
 				2E449FBA2672730C006B3430 /* WeatherDataLoader.swift */,
 				2E449FB8267271FD006B3430 /* fiveDayCell.swift */,
@@ -323,7 +323,6 @@
 				2E449FA926711190006B3430 /* Task.swift in Sources */,
 				2E449FBB2672730C006B3430 /* WeatherDataLoader.swift in Sources */,
 				2E449FC32672780E006B3430 /* SavedWeather.swift in Sources */,
-				2E449FB4267270D6006B3430 /* FourthTask.swift in Sources */,
 				2E449F82265D3480006B3430 /* FirstTask.swift in Sources */,
 				2E449FB9267271FD006B3430 /* fiveDayCell.swift in Sources */,
 				2E449FC1267277FA006B3430 /* SavedWeatherModel.swift in Sources */,
@@ -332,6 +331,7 @@
 				2E449F9E265D9140006B3430 /* Cell.swift in Sources */,
 				2E449F7E265D3480006B3430 /* AppDelegate.swift in Sources */,
 				2E449F92265D5DAF006B3430 /* SecondTask.swift in Sources */,
+				2E3B73262677AC7D00B4D2C9 /* FourthTask.swift in Sources */,
 				2E449FBD26727331006B3430 /* WeatherData.swift in Sources */,
 				2E449FAC267124BB006B3430 /* Model.xcdatamodeld in Sources */,
 				2E449FAE2671435B006B3430 /* CellCore.swift in Sources */,

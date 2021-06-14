@@ -378,7 +378,7 @@
                                     <outlet property="dataSource" destination="WaI-Y2-LfZ" id="eKB-2B-Ha8"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RU, UA, USA, UK, FR" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2S-IL-oyM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Moscow" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2S-IL-oyM">
                                 <rect key="frame" x="70" y="296" width="215" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="dUO-tJ-Edg"/>
