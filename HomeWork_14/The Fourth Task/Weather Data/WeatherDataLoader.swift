@@ -25,9 +25,10 @@ class WeatherDataLoader {
         request(url).responseJSON { jsonData in
             if let data = jsonData.result.value,
                let jsonDic = data as? NSDictionary{
+                let jsonOpened = WeatherData()
                 DispatchQueue.main.async{
-                    let jsonOpened = WeatherData()
                     jsonOpened.jsonOpen(data: jsonDic)
+                    print("json dic open")
                 }
 //                guard let weatherData = WeatherData(data: jsonDic) else {
 //                    print("WEATHER ERROR"); return
