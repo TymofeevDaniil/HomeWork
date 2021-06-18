@@ -4,25 +4,24 @@ import RealmSwift
 class WeatherData {
 
 //MARK: - Init params
-//    var name = "name"
-//    var description = "description"
-//    var icon = "icon"
-//    var tempMin = 0
-//    var tempMax = 0
-//    var day1 = "day1"
-//    var day2 = "day2"
-//    var day3 = "day3"
-//    var day4 = "day4"
-//    var day5 = "day5"
-//    var tempDay1 = 0
-//    var tempDay2 = 0
-//    var tempDay3 = 0
-//    var tempDay4 = 0
-//    var tempDay5 = 0
+    var name = "ERROR"
+    var descriptionW = "ERROR"
+    var icon = "11d"
+    var tempMin = 00
+    var tempMax = 00
+    var day1 = "ERROR"
+    var day2 = "ERROR"
+    var day3 = "ERROR"
+    var day4 = "ERROR"
+    var day5 = "ERROR"
+    var tempDay1 = 00
+    var tempDay2 = 00
+    var tempDay3 = 00
+    var tempDay4 = 00
+    var tempDay5 = 00
 
 //MARK: - JSON form
-    func jsonOpen(data: NSDictionary){
-    //init?(data: NSDictionary){
+    init?(data: NSDictionary){
         guard let cityContainer = data["city"] as? NSDictionary,
               let name = cityContainer["name"] as? String,
 
@@ -59,25 +58,28 @@ class WeatherData {
               let tempDay5 = mainContainerDay5["temp"] as? Double,
               let day5 = day5Container["dt_txt"] as? String
         else {
-            return print("json not loaded")
+            return
         }
-        SavedWeather.shared.save(newData: (name, description, icon, Int(tempMin), Int(tempMax), day1, day2, day3, day4, day5, Int(tempDay1), Int(tempDay2), Int(tempDay3), Int(tempDay4), Int(tempDay5)))
+//        SavedWeather.shared.save(newData: (name, description, icon, Int(tempMin), Int(tempMax), day1, day2, day3, day4, day5, Int(tempDay1), Int(tempDay2), Int(tempDay3), Int(tempDay4), Int(tempDay5)))
 //        (self.name, self.description, self.icon, self.tempMin, self.tempMax, self.day1, self.day2, self.day3, self.day4, self.day5, self.tempDay1, self.tempDay2, self.tempDay3, self.tempDay4, self.tempDay5) = SavedWeather.shared.load()!
-//        self.name = name
-//        self.description = description
-//        self.icon = icon
-//        self.tempMin = Int(tempMin)
-//        self.tempMax = Int(tempMax)
-//        self.tempDay1 = Int(tempDay1)
-//        self.day1 = day1
-//        self.day2 = day2
-//        self.day3 = day3
-//        self.day4 = day4
-//        self.day5 = day5
-//        self.tempDay1 = Int(tempDay1)
-//        self.tempDay2 = Int(tempDay2)
-//        self.tempDay3 = Int(tempDay3)
-//        self.tempDay4 = Int(tempDay4)
-//        self.tempDay5 = Int(tempDay5)
+        self.name = name
+        self.descriptionW = description
+        self.icon = icon
+        self.tempMin = Int(tempMin)
+        self.tempMax = Int(tempMax)
+        self.tempDay1 = Int(tempDay1)
+        self.day1 = day1
+        self.day2 = day2
+        self.day3 = day3
+        self.day4 = day4
+        self.day5 = day5
+        self.tempDay1 = Int(tempDay1)
+        self.tempDay2 = Int(tempDay2)
+        self.tempDay3 = Int(tempDay3)
+        self.tempDay4 = Int(tempDay4)
+        self.tempDay5 = Int(tempDay5)
+    }
+    func getData() -> (String, String, String, Int, Int, String, String, String, String, String, Int, Int, Int, Int, Int){
+        return (self.name, self.descriptionW, self.icon, self.tempMin, self.tempMax, self.day1, self.day2, self.day3, self.day4, self.day5, self.tempDay1, self.tempDay2, self.tempDay3, self.tempDay4, self.tempDay5)
     }
 }
