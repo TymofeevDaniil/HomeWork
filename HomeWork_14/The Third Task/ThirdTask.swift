@@ -95,4 +95,23 @@ extension ThirdTask: UITableViewDataSource{
             tableView.endUpdates()
         }
     }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//
+//  }
+//
+//  func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+//      return true
+//  }
+//
+//  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
+//  {
+//      let update = UITableViewRowAction(style: .Normal, title: "Update") { action, index in
+//          print("update")
+//      }
+//      let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+//          print("Delete")
+//
+//      }
+//      return [delete, update]
+//  }
 }

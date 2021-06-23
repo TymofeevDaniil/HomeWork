@@ -34,6 +34,13 @@ class Persistance{
         }
         print("saved")
     }
+    func edit(index: Int, text: String){
+        let allTasks = realm.objects(Task.self)
+        try! realm.write{
+            allTasks[index].item = text
+        }
+        print("saved")
+    }
     func delete(index: Int){
         let allTasks = realm.objects(Task.self)
         try! realm.write{
