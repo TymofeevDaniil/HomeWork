@@ -36,6 +36,7 @@ class ThirdTask: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        coreTable.delegate = self
     }
     
 //MARK: - Saving data into CoreData
@@ -72,11 +73,47 @@ extension ThirdTask: UITableViewDataSource{
         cell.coreSwitch.isOn = task.done
         return cell
     }
-    func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                     forRowAt indexPath: IndexPath){
-        if editingStyle == .delete{
-            tableView.beginUpdates()
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit"){ (action, view, success) in
+            self.coreTable.beginUpdates()
+            let alert = UIAlertController(title: "Edit task", message: "Type new text", preferredStyle: .alert)
+            alert.addTextField()
+            alert.addAction(UIAlertAction(title: "Done", style: .default, handler: {_ in
+                let tf = alert.textFields?.first
+                if let newText = tf?.text {
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let context = appDelegate.persistentContainer.viewContext
+                    let fetchRequest: NSFetchRequest<TaskCore> = TaskCore.fetchRequest()
+                    do {
+                        let tasks = try context.fetch(fetchRequest)
+                        tasks[indexPath.row].text = newText
+                        try context.save()
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+                self.coreTable.reloadData()
+            }))
+            self.present(alert, animated: true)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest: NSFetchRequest<TaskCore> = TaskCore.fetchRequest()
+            do {
+                self.task = try context.fetch(fetchRequest)
+            } catch let error as NSError {
+                print(error)
+            }
+            self.coreTable.reloadData()
+            self.coreTable.endUpdates()
+        }
+        return UISwipeActionsConfiguration(actions: [editAction])
+     }
+     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){ (action, view, success) in
+            self.coreTable.beginUpdates()
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -90,28 +127,11 @@ extension ThirdTask: UITableViewDataSource{
             } catch let error as NSError {
                 print(error)
             }
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.reloadData()
-            tableView.endUpdates()
+            self.coreTable.deleteRows(at: [indexPath], with: .fade)
+            self.coreTable.reloadData()
+            self.coreTable.endUpdates()
+            print("deleting")
         }
-    }
-//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//
-//  }
-//
-//  func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-//      return true
-//  }
-//
-//  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
-//  {
-//      let update = UITableViewRowAction(style: .Normal, title: "Update") { action, index in
-//          print("update")
-//      }
-//      let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
-//          print("Delete")
-//
-//      }
-//      return [delete, update]
-//  }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+     }
 }
